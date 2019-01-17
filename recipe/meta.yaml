@@ -1,5 +1,5 @@
 {% set name = "beautysh" %}
-{% set version = "3.11" %}
+{% set version = "3.12" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3e950907d5f7938ecbf1a9b149f3e477df586a8d0fc944a29d8396d6253604f7
+  sha256: 738b712c0a8141dd77fed50db70d1de415adf3d86f0f272abfb5b1f76af5f1e7
 
 build:
   noarch: python
