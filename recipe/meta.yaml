@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 738b712c0a8141dd77fed50db70d1de415adf3d86f0f272abfb5b1f76af5f1e7
+  sha256: ee7bb6e7abda8948ec2e189e5f8fd727058c1744d4f5a6a9ff7313ee37d4b76c
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - beautysh = beautysh.beautysh:main
@@ -38,5 +38,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - bemeurer
+    - lovesegfault
     - bollwyvl
+    - dbast
