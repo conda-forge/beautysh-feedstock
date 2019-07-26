@@ -1,5 +1,5 @@
 {% set name = "beautysh" %}
-{% set version = "4.1" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ee7bb6e7abda8948ec2e189e5f8fd727058c1744d4f5a6a9ff7313ee37d4b76c
+  sha256: f9c834a063f37aac980a6177166ea69ba39e9758a1a4df065ed9c18d54be347a
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - beautysh = beautysh.beautysh:main
