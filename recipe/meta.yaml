@@ -28,7 +28,7 @@ test:
   imports:
     - beautysh
   commands:
-    - beautysh --help
+    - beautysh --help || true
 
 about:
   home: https://github.com/bemeurer/beautysh
