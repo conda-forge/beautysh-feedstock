@@ -1,5 +1,5 @@
 {% set name = "beautysh" %}
-{% set version = "5.0.2" %}
+{% set version = "6.0.1" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0cb95b62fb2d62ab44357e09abe721377cd0bc6cafcdaf9eb4177917cea16c81
+  sha256: 9df2fd6584f2470fcb76556ac0bf4c69575133d63318a1d8e4253a064cc145e1
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - beautysh = beautysh.beautysh:main
 
@@ -25,11 +25,14 @@ requirements:
     - setuptools
 
 test:
+  requires:
+    - pip
   imports:
     - beautysh
   commands:
     - beautysh --version
     - beautysh --help
+    - python -m pip check
 
 about:
   home: https://github.com/bemeurer/beautysh
