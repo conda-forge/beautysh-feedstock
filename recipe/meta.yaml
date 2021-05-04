@@ -18,7 +18,7 @@ build:
   number: 0
   script: cd dist && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
-    - beautysh = beautysh.beautysh:main
+    - beautysh = beautysh:main
 
 requirements:
   host:
