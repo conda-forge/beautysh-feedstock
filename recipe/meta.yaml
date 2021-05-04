@@ -1,5 +1,5 @@
 {% set name = "beautysh" %}
-{% set version = "6.0.1" %}
+{% set version = "6.1.0" %}
 
 package:
   name: {{ name }}
@@ -7,15 +7,15 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 9df2fd6584f2470fcb76556ac0bf4c69575133d63318a1d8e4253a064cc145e1
+    sha256: 966b4acb877ad3606a96524e42c8368f0fdff30058340b497788ec4161b7d544
     folder: dist
-  - url: https://github.com/lovesegfault/{{ name }}/archive/{{ version }}.tar.gz
-    sha256: 16830490343a9bdb30e0b9cc994dec735114cfd4ba7c69b4545ff7e287df48b3
+  - url: https://github.com/lovesegfault/{{ name }}/archive/v{{ version }}.tar.gz
+    sha256: 136c40c8da7726d517638616cd585194c8c80a4ddc83874a6ce8158b72ac5124
     folder: src
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: cd dist && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - beautysh = beautysh.beautysh:main
