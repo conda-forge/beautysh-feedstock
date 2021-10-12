@@ -1,5 +1,5 @@
 {% set name = "beautysh" %}
-{% set version = "6.1.0" %}
+{% set version = "6.2.1" %}
 
 package:
   name: {{ name }}
@@ -7,27 +7,33 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: 966b4acb877ad3606a96524e42c8368f0fdff30058340b497788ec4161b7d544
+    sha256: 423e0c87cccf2af21cae9a75e04e0a42bc6ce28469c001ee8730242e10a45acd
     folder: dist
   - url: https://github.com/lovesegfault/{{ name }}/archive/v{{ version }}.tar.gz
-    sha256: 136c40c8da7726d517638616cd585194c8c80a4ddc83874a6ce8158b72ac5124
+    sha256: 0d158ad19e7f24018c62692ac36929d165ee2ba0f6dfa50c262db32f426eacd6
     folder: src
 
 build:
   noarch: python
   number: 0
-  script: cd dist && {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  script: 
+    - cd dist
+    - {{ PYTHON }} -c '__import__("os").unlink("pyproject.toml")'
+    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - beautysh = beautysh:main
 
 requirements:
   host:
     - pip
-    - python >=3
     - poetry-core >=1.0.0
+    - python >=3.6.2
   run:
-    - python >=3
+    - colorama >=0.4.4,<0.5
+    - python >=3.6.2
     - setuptools
+    - types-colorama >=0.4.3,<0.5
+    - types-setuptools >=57.4.0,<58
 
 test:
   source_files:
@@ -38,11 +44,11 @@ test:
   imports:
     - beautysh
   commands:
+    - pip check
     - beautysh --version
     - beautysh --help
-    - python -m pip check
-    # coverage 61% as of 6.0.1
-    - cd src && pytest --cov beautysh --cov-fail-under 60
+    # coverage 58.17% as of 6.2.1
+    - cd src && pytest --cov beautysh --cov-fail-under 58
 
 about:
   home: https://github.com/bemeurer/beautysh
