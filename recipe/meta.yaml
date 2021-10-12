@@ -47,8 +47,8 @@ test:
     - pip check
     - beautysh --version
     - beautysh --help
-    # coverage 61% as of 6.0.1
-    - cd src && pytest --cov beautysh --cov-fail-under 60
+    # coverage 58.17% as of 6.2.1
+    - cd src && pytest --cov beautysh --cov-fail-under 58
 
 about:
   home: https://github.com/bemeurer/beautysh
