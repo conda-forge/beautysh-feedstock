@@ -1,4 +1,4 @@
-{% set version = "6.3.3" %}
+{% set version = "6.4.0" %}
 
 package:
   name: beautysh
@@ -6,10 +6,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/b/beautysh/beautysh-{{ version }}.tar.gz
-    sha256: a86e1ea1bc42c9251eb2543403156356805b0983f29b4139b5cc27f270f963a7
+    sha256: d758d74e81ed11d073e0ebafe817b030f7745773a648748f68dbd5e9ecd1c8a0
     folder: dist
   - url: https://github.com/lovesegfault/beautysh/archive/v{{ version }}.tar.gz
-    sha256: 6ad3890ebd46e4c8ac6ebd6212b40f7a9a8ab450016cd31a30b2308e35120ec8
+    sha256: ca1ab92c9278dd5395e3a32168e2b3731e10bde4fc691f93620b9b19413bc073
     folder: src
 
 build:
