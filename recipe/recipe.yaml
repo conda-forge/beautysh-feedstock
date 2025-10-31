@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 6.4.0
+  version: "6.4.1"
   python_check_max: "3.14"
   pytest_k: |
     not pre_commit_hooks
@@ -13,7 +13,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/b/beautysh/beautysh-${{ version }}.tar.gz
-  sha256: d758d74e81ed11d073e0ebafe817b030f7745773a648748f68dbd5e9ecd1c8a0
+  sha256: 5beeccdddf02cb11088e009d60e367a28aab1609fbe8da9e5a19a7c59fa28f56
 
 build:
   number: 0
