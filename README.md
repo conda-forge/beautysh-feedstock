@@ -3,11 +3,13 @@ About beautysh-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/beautysh-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/bemeurer/beautysh
+Home: https://pypi.org/project/beautysh
 
 Package license: MIT
 
 Summary: A Bash beautifier for the masses.
+
+Development: https://github.com/bemeurer/beautysh
 
 Current build status
 ====================
