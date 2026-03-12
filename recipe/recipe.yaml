@@ -4,6 +4,7 @@ schema_version: 1
 context:
   version: "6.4.3"
   python_check_max: "3.14"
+  cov_fail_under: "81"
 
 
 package:
@@ -55,7 +56,7 @@ tests:
       - beautysh --version
       - beautysh --help
       - coverage run --source beautysh --branch -m pytest -vv --tb=long --color=yes -k "not pre_commit_hooks"
-      - coverage report --show-missing --skip-covered --fail-under=55
+      - coverage report --show-missing --skip-covered --fail-under=${{ cov_fail_under }}
 
 about:
   license: MIT
